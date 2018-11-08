@@ -1,0 +1,8 @@
+---
+title: "hw06"
+author: "Caroline Seip"
+date: '2018-11-08'
+output: github_document
+---
+
+
