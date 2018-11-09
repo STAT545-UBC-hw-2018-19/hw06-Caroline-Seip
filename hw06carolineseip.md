@@ -80,7 +80,7 @@ Using 'stri\_rand\_lipsum':
 stri_rand_lipsum(1, start_lipsum = FALSE)
 ```
 
-    ## [1] "Amet lobortis sodales ac varius faucibus, facilisis a sit tempor. Urna ornare et blandit finibus iaculis ornare quisque nec. Nec, velit, dapibus a nisl libero sit mauris eros, urna imperdiet. Pulvinar platea et amet litora. Sed quis ligula leo enim, in nec sed tellus sed. Morbi ipsum nec suspendisse ante himenaeos pellentesque et. Tellus ligula quam ut posuere congue. Ex conubia sapien lectus ullamcorper et. Sollicitudin est auctor augue urna nec ipsum vitae sem malesuada sed. Integer curae natoque vel facilisis accumsan, lobortis euismod aliquam, non nibh. Fusce ac natoque pellentesque ut lacus. Eu porta lorem nunc sodales sed ac sed, nibh at."
+    ## [1] "Efficitur eget inceptos, mollis amet ut sociis sed. Tristique mi convallis cum pretium ac donec lectus. Maecenas sapien taciti eros dictum at montes ullamcorper. Sollicitudin sed donec. Hendrerit magna parturient et maecenas a vitae maecenas et sed! Iaculis egestas conubia nibh nam risus fermentum fames faucibus, in aliquam? Natoque class, leo, ultrices. Convallis nulla semper non fames ac vehicula sed purus. Tincidunt platea, imperdiet posuere imperdiet rutrum. Suscipit inceptos eget odio ipsum consectetur pharetra."
 
 ### How do you control the language that 'stri\_sort' uses for sorting?
 
