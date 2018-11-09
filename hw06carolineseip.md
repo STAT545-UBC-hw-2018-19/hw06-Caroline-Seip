@@ -80,7 +80,7 @@ Using `stri_rand_lipsum`:
 stri_rand_lipsum(1, start_lipsum = FALSE)
 ```
 
-    ## [1] "Efficitur non malesuada nec ac et, condimentum convallis ornare tempor. Egestas at ligula convallis senectus nibh a ac eros. Vestibulum ornare, non, ut dignissim at consequat duis in per. Tincidunt cursus eget sapien sed eu, sed vel aliquet, dapibus vel quis tincidunt. Cras dignissim non, ullamcorper torquent nulla lobortis. Porta leo leo, tincidunt justo lobortis, eu. Vel dolor suspendisse, amet interdum ad lorem tellus donec. Non eget ac sit diam sit parturient venenatis, consectetur, lectus, augue. Tempus at est semper ornare sed blandit velit. Ac in erat, tempor, quis tempus. Dapibus, quisque sed, et donec a imperdiet non. Felis pellentesque sed, tellus neque est eu nulla pellentesque quam. Tincidunt aenean, taciti leo eget urna. Viverra ut, in enim mi mauris eu pulvinar accumsan curae tempus. Vestibulum hac non dictum turpis sed sed."
+    ## [1] "Mattis duis eu vestibulum in litora ultricies hac. Sodales id et, mauris sed ad amet suspendisse id ultricies. In sagittis fringilla. Dui sed quis accumsan in erat nullam tincidunt ultrices ut sed id. At amet potenti lectus feugiat mauris proin aptent ligula. Nec tortor quam, dictumst curae placerat vivamus est ut, cursus. Massa, quis et in, dolor amet tempus a. Adipiscing est vestibulum in habitant, vitae. Massa ut vel suspendisse. Felis laoreet varius vestibulum ligula odio est at, a. Per faucibus taciti quam nunc auctor id class ut. Amet efficitur mi potenti fames congue."
 
 ### How do you control the language that 'stri\_sort' uses for sorting?
 
@@ -172,3 +172,5 @@ FtoC("hello")
     ## Error in FtoC("hello"): Expecting f to be numeric, you gave me character
 
 Nice! We have now made a custom error message for the `FtoC` function, so that it will only accept numeric data.
+
+This function is now useful for me to be able to input numeric data to convert Fahrenheit temperatures to Celsius :tada:

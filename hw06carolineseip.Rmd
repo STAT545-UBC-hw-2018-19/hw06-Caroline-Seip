@@ -141,4 +141,6 @@ FtoC("hello")
 ```
 Nice! We have now made a custom error message for the `FtoC` function, so that it will only accept numeric data.
 
+This function is now useful for me to be able to input numeric data to convert Fahrenheit temperatures to Celsius :tada:
+
 
