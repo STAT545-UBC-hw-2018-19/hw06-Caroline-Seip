@@ -23,15 +23,15 @@ suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(testthat))
 ```
 
-#1. Character Data
+#Task 1: Character Data
 
 ##Read and work the exercises in the Strings chapter
 
 ###Find the stringi function that:
 
-####1. Counts the number of words in a sentence
+####Counts the number of words in a sentence
 
-Using 'strsplit'
+Using `strsplit`:
 
 ```{r}
 #Make a string of words, aka a sentence
@@ -41,7 +41,7 @@ sapply(strsplit(string, " "), length)
 ```
 There are 9 words in the sentence.
 
-Using 'stri_count_fixed':
+Using `stri_count_fixed`:
 
 ```{r}
 #Count the number of spaces in the sentence, plus one because there will always be 
@@ -50,18 +50,18 @@ stri_count_fixed(string, " ") + 1
 ```
 There are 9 words in the sentence
 
-####2. Finds duplicated strings
+####Finds duplicated strings
 
-Using 'stri_duplicated':
+Using `stri_duplicated`:
 
 ```{r}
 stri_duplicated(c("n", "a", "t", "h", "a", "n"), fromLast = FALSE)
 ```
-There are two duplicate letters in the name Nathan, 'a' and 'n'.
+There are two duplicate letters in the name Nathan, "a" and "n".
 
-####3. Generate random text
+####Generate random text
 
-Using 'stri_rand_lipsum':
+Using `stri_rand_lipsum`:
 
 ```{r}
 #Generate one paragraph of random lorem ipsum text, don't start with lorem ipsum
@@ -70,7 +70,7 @@ stri_rand_lipsum(1, start_lipsum = FALSE)
 
 ###How do you control the language that 'stri_sort' uses for sorting?
 
-Specifying the 'locale' in the 'stri_sort' function allows us to change the language, for example:
+Specifying the `locale` in the `stri_sort` function allows us to change the language, for example:
 
 ```{r}
 #Sort letters, using American english
@@ -84,15 +84,17 @@ stri_sort(letters, locale="lt_LT")
 
 If we specify Lithuanian, the letter "y" moves to between "i" and "j", instead of between "x" and "z".
 
-#2. Writing Functions
+#Task 2: Writing Functions
+
+##Converting temperature data from remote wildlife cameras :camera: :bear: :deer:
 
 I have chosen to write a function to convert Fahrenheit to Celsius. This is useful for me because I use remote wildlife cameras that have internal thermometers to report temperature. The default setting on these cameras is Fahreneheit, so if the camera is not set up correctly the temperature will be reported in Fahrenheit, instead of Celsius.
 
 The formula for converting Fahrenheit to Celsius is:
 
-C= (F-32)*(5/9)
+`C= (F-32)*(5/9)`
 
-To test I will convert a commonly seen temperature on the cameras to Celsius (it's northern Alberta)
+To test I will convert a commonly seen temperature on the cameras to Celsius (...it's northern Alberta :snowflake:)
 
 ```{r}
 #The input of 'FtoC' is temperature in Fahrenheit
@@ -107,7 +109,7 @@ FtoC(-30)
 ```
 -30F is equal to -34.4C. This was the expected result.
 
-Now let's formally test the function 'FtoC' using 'testthat':
+Now let's formally test the function `FtoC` using `testthat`:
 
 32 degrees Fahrenheit should be equal to 0 degrees Celsius
 
@@ -116,7 +118,7 @@ test_that("Simple cases work", {
   expect_equal(FtoC(32), 0)
 })
 ```
-Seems happy!
+Seems happy! :smiley:
 
 Now let's try to break the function:
 
@@ -125,7 +127,7 @@ FtoC("hello")
 ```
 Great, it doesn't work on character data.
 
-Let's update the 'FtoC' function to throw a custom error if the input is not numeric:
+Let's update the `FtoC` function to throw a custom error if the input is not numeric:
 
 ```{r error=TRUE}
 FtoC <- function (f) {
@@ -137,6 +139,6 @@ FtoC <- function (f) {
 }
 FtoC("hello")
 ```
-Nice! We have now made a custom error message for the 'FtoC' function, so that it will only accept numeric data.
+Nice! We have now made a custom error message for the `FtoC` function, so that it will only accept numeric data.
 
 

@@ -24,17 +24,17 @@ suppressPackageStartupMessages(library(stringi))
 suppressPackageStartupMessages(library(testthat))
 ```
 
-1. Character Data
-=================
+Task 1: Character Data
+======================
 
 Read and work the exercises in the Strings chapter
 --------------------------------------------------
 
 ### Find the stringi function that:
 
-#### 1. Counts the number of words in a sentence
+#### Counts the number of words in a sentence
 
-Using 'strsplit'
+Using `strsplit`:
 
 ``` r
 #Make a string of words, aka a sentence
@@ -47,7 +47,7 @@ sapply(strsplit(string, " "), length)
 
 There are 9 words in the sentence.
 
-Using 'stri\_count\_fixed':
+Using `stri_count_fixed`:
 
 ``` r
 #Count the number of spaces in the sentence, plus one because there will always be 
@@ -59,9 +59,9 @@ stri_count_fixed(string, " ") + 1
 
 There are 9 words in the sentence
 
-#### 2. Finds duplicated strings
+#### Finds duplicated strings
 
-Using 'stri\_duplicated':
+Using `stri_duplicated`:
 
 ``` r
 stri_duplicated(c("n", "a", "t", "h", "a", "n"), fromLast = FALSE)
@@ -69,22 +69,22 @@ stri_duplicated(c("n", "a", "t", "h", "a", "n"), fromLast = FALSE)
 
     ## [1] FALSE FALSE FALSE FALSE  TRUE  TRUE
 
-There are two duplicate letters in the name Nathan, 'a' and 'n'.
+There are two duplicate letters in the name Nathan, "a" and "n".
 
-#### 3. Generate random text
+#### Generate random text
 
-Using 'stri\_rand\_lipsum':
+Using `stri_rand_lipsum`:
 
 ``` r
 #Generate one paragraph of random lorem ipsum text, don't start with lorem ipsum
 stri_rand_lipsum(1, start_lipsum = FALSE)
 ```
 
-    ## [1] "Efficitur eget inceptos, mollis amet ut sociis sed. Tristique mi convallis cum pretium ac donec lectus. Maecenas sapien taciti eros dictum at montes ullamcorper. Sollicitudin sed donec. Hendrerit magna parturient et maecenas a vitae maecenas et sed! Iaculis egestas conubia nibh nam risus fermentum fames faucibus, in aliquam? Natoque class, leo, ultrices. Convallis nulla semper non fames ac vehicula sed purus. Tincidunt platea, imperdiet posuere imperdiet rutrum. Suscipit inceptos eget odio ipsum consectetur pharetra."
+    ## [1] "Efficitur non malesuada nec ac et, condimentum convallis ornare tempor. Egestas at ligula convallis senectus nibh a ac eros. Vestibulum ornare, non, ut dignissim at consequat duis in per. Tincidunt cursus eget sapien sed eu, sed vel aliquet, dapibus vel quis tincidunt. Cras dignissim non, ullamcorper torquent nulla lobortis. Porta leo leo, tincidunt justo lobortis, eu. Vel dolor suspendisse, amet interdum ad lorem tellus donec. Non eget ac sit diam sit parturient venenatis, consectetur, lectus, augue. Tempus at est semper ornare sed blandit velit. Ac in erat, tempor, quis tempus. Dapibus, quisque sed, et donec a imperdiet non. Felis pellentesque sed, tellus neque est eu nulla pellentesque quam. Tincidunt aenean, taciti leo eget urna. Viverra ut, in enim mi mauris eu pulvinar accumsan curae tempus. Vestibulum hac non dictum turpis sed sed."
 
 ### How do you control the language that 'stri\_sort' uses for sorting?
 
-Specifying the 'locale' in the 'stri\_sort' function allows us to change the language, for example:
+Specifying the `locale` in the `stri_sort` function allows us to change the language, for example:
 
 ``` r
 #Sort letters, using American english
@@ -104,16 +104,19 @@ stri_sort(letters, locale="lt_LT")
 
 If we specify Lithuanian, the letter "y" moves to between "i" and "j", instead of between "x" and "z".
 
-2. Writing Functions
-====================
+Task 2: Writing Functions
+=========================
+
+Converting temperature data from remote wildlife cameras :camera: :bear: :deer:
+-------------------------------------------------------------------------------
 
 I have chosen to write a function to convert Fahrenheit to Celsius. This is useful for me because I use remote wildlife cameras that have internal thermometers to report temperature. The default setting on these cameras is Fahreneheit, so if the camera is not set up correctly the temperature will be reported in Fahrenheit, instead of Celsius.
 
 The formula for converting Fahrenheit to Celsius is:
 
-C= (F-32)\*(5/9)
+`C= (F-32)*(5/9)`
 
-To test I will convert a commonly seen temperature on the cameras to Celsius (it's northern Alberta)
+To test I will convert a commonly seen temperature on the cameras to Celsius (...it's northern Alberta :snowflake:)
 
 ``` r
 #The input of 'FtoC' is temperature in Fahrenheit
@@ -131,7 +134,7 @@ FtoC(-30)
 
 -30F is equal to -34.4C. This was the expected result.
 
-Now let's formally test the function 'FtoC' using 'testthat':
+Now let's formally test the function `FtoC` using `testthat`:
 
 32 degrees Fahrenheit should be equal to 0 degrees Celsius
 
@@ -141,7 +144,7 @@ test_that("Simple cases work", {
 })
 ```
 
-Seems happy!
+Seems happy! :smiley:
 
 Now let's try to break the function:
 
@@ -153,7 +156,7 @@ FtoC("hello")
 
 Great, it doesn't work on character data.
 
-Let's update the 'FtoC' function to throw a custom error if the input is not numeric:
+Let's update the `FtoC` function to throw a custom error if the input is not numeric:
 
 ``` r
 FtoC <- function (f) {
@@ -168,4 +171,4 @@ FtoC("hello")
 
     ## Error in FtoC("hello"): Expecting f to be numeric, you gave me character
 
-Nice! We have now made a custom error message for the 'FtoC' function, so that it will only accept numeric data.
+Nice! We have now made a custom error message for the `FtoC` function, so that it will only accept numeric data.
